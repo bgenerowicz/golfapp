@@ -83,7 +83,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="izm-GY-BIo" id="afm-Hw-gLa">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D2G-xt-It9">
@@ -124,7 +124,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="mhh-IX-a1Z">
-                        <barButtonItem key="rightBarButtonItem" title="+" id="oIF-rU-JJW">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="oIF-rU-JJW">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="show" id="79O-hf-EbF"/>
                             </connections>
