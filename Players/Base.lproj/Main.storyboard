@@ -43,13 +43,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Me8-7A-axe">
-                                <rect key="frame" x="20" y="181" width="46" height="30"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="newPerson:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bqe-13-hfW"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -61,14 +54,29 @@
                             <constraint firstItem="SDb-pZ-hls" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Sh5-dK-V9K"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="WxC-9L-7yq">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="fhf-sX-nz9">
+                            <connections>
+                                <segue destination="NKe-cz-2eB" kind="show" id="SAW-4u-ZKu"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Z7u-Xd-tzb">
+                            <connections>
+                                <action selector="newPerson:" destination="BYZ-38-t0r" id="Mkb-fn-z3H"/>
+                                <segue destination="Pvq-OL-cTa" kind="unwind" unwindAction="unwindToPlayerList:" id="DxS-cB-l27"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="newName" destination="SDb-pZ-hls" id="l5N-FZ-EYX"/>
                         <outlet property="newhcp" destination="XI6-jk-H0s" id="jQk-Va-enn"/>
+                        <outlet property="saveButton" destination="Z7u-Xd-tzb" id="eNw-JH-FOI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="Pvq-OL-cTa" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1155" y="429"/>
+            <point key="canvasLocation" x="1967" y="429"/>
         </scene>
         <!--Players Table View Controller-->
         <scene sceneID="kDC-SC-Qwy">
@@ -80,7 +88,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlayersTableViewCell" id="izm-GY-BIo" customClass="PlayersTableViewCell" customModule="Players" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="80"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="izm-GY-BIo" id="afm-Hw-gLa">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
@@ -126,7 +134,7 @@
                     <navigationItem key="navigationItem" id="mhh-IX-a1Z">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="oIF-rU-JJW">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="79O-hf-EbF"/>
+                                <segue destination="HOy-xc-8aa" kind="presentation" id="79O-hf-EbF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -153,5 +161,26 @@
             </objects>
             <point key="canvasLocation" x="-365" y="429"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Pmx-NZ-x0x">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HOy-xc-8aa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="i1J-9w-NNy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="wOK-3J-kbZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JPw-4n-ES9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1155" y="429"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="SAW-4u-ZKu"/>
+    </inferredMetricsTieBreakers>
 </document>

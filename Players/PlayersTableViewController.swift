@@ -106,4 +106,12 @@ class PlayersTableViewController: UITableViewController {
     }
     */
 
+    @IBAction func unwindToPlayerList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.sourceViewController as? addPlayerViewController, player = sourceViewController.player {
+            let newIndexPath = NSIndexPath(forRow: players.count, inSection: 0)
+            players.append(player)
+            
+            tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+        }
+    }
 }
