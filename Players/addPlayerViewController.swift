@@ -41,7 +41,7 @@ class addPlayerViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldDidEndEditing(textField: UITextField) {
         checkValidPerson()
-        navigationItem.title = textField.text
+        //navigationItem.title = textField.text
     }
 
     
@@ -49,10 +49,11 @@ class addPlayerViewController: UIViewController, UITextFieldDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if saveButton === sender {
             let name = newName.text ?? ""
-            let hcp = Int(newhcp.text!)
             
-            
-            player = Players(name: name, hcp: hcp!)
+            //make sure hcp = int
+            if let hcp = Int(newhcp.text!) {
+                player = Players(name: name, hcp: hcp)
+            }
         }
     }
     /*
